@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jane Doe Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+    body { background: #fff; color: #333; }
+
+    header {
+      background-color: purple;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .info { line-height: 1.5; }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .intro {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .intro img {
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: purple;
+    }
+
+    .skills, .projects, .recommendations {
+      padding: 2rem;
+    }
+
+    .skills h2, .projects h2, .recommendations h2 {
+      color: purple;
+      margin-bottom: 1rem;
+    }
+
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      width: 140px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .projects ul {
+      list-style: disc inside;
+      margin-left: 1rem;
+    }
+
+    .recommendation-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .recommendation {
+      border: 1px solid #999;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 300px;
+      font-style: italic;
+    }
+
+    .rec-form {
+      margin-top: 2rem;
+    }
+
+    .rec-form input,
+    .rec-form textarea {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
+
+    .rec-form button {
+      padding: 0.5rem 1rem;
+      background: purple;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Back to top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 22px;
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Modal Popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-box {
+      background-color: #e9bff7;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .popup-box h3 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .popup-box button {
+      padding: 0.5rem 1.5rem;
+      background-color: white;
+      border: 2px solid purple;
+      border-radius: 4px;
+      cursor: pointer;
+      color: purple;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="info">
+      <strong>Jane Doe</strong><br>
+      <a style="color:white" href="mailto:jdoe@email.com">jdoe@email.com</a><br>
+      +1345676498
+    </div>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#recommend">Recommendations</a>
+    </nav>
+  </header>
+
+  <section class="intro" id="about">
+    <img src="https://img.icons8.com/ios/500/laptop-coding.png" />
+    <div>
+      <h1>Hi, I'm Jane Doe! 👋</h1>
+      <p>I am a full stack developer with 2 years of experience in both application and presentation layers. I have worked on applications and microservices deployed on IBM Cloud. I am an avid user of IBM Watson Services and have worked on Watson Assistant, NLU, Sentiment analyzer to name a few.</p>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card">HTML<br>2 years experience</div>
+      <div class="skill-card">CSS<br>2 years experience</div>
+      <div class="skill-card">JavaScript<br>1.5 years experience</div>
+      <div class="skill-card">Java<br>0.5 years experience</div>
+      <div class="skill-card">React<br>1 year experience</div>
+      <div class="skill-card">Node.js<br>1 year experience</div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Chatbot</strong> – Developed a secure website integrated with chatbot for an automobile client using HTML, CSS, JavaScript and IBM Watson Assistant</li>
+      <li><strong>Sentiment Analyzer</strong> – Developed and deployed a sentiment analyzer for the box reviews section of an eCommerce platform using IBM NLU</li>
+      <li><strong>Fashion Website</strong> – Created a styled multi-page website for a new player in the fashion industry and integrated it with a shopping cart, using Stripe for payment gateway</li>
+    </ul>
+  </section>
+
+  <section class="recommendations" id="recommend">
+    <h2>Recommendations</h2>
+    <div class="recommendation-boxes">
+      <div class="recommendation">“ Jane is a very quick learner and quickly grasps key concepts of Web development. She got a great attitude & she is an excellent team player. She has a curious mind and asks the right question. She takes initiative within a team and has potentials to lead the team. ”</div>
+      <div class="recommendation">“ Working with Jane has been an awesome experience. She is highly knowledgable and always goes the extra step to make sure everything is right. For any future projects that need her expertise I would definitely want to work with her again. ”</div>
+      <div class="recommendation">“ I had worked along with Jane during the initial phase of our venture which needed Web development. She is a committed resource who has in depth knowledge about the domain. She will be an asset for any organisation! ”</div>
+      <div class="recommendation">“ Jane is a great person to work with. She is very knowledgeable in Front-end development. ”</div>
+    </div>
+
+    <form class="rec-form" onsubmit="handleRecommendation(event)">
+      <h4>Leave a Recommendation</h4>
+      <input type="text" placeholder="Name (Optional)" id="nameInput" />
+      <textarea placeholder="Write your recommendation..." id="recommendationInput" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Scroll to Top Button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- Popup Modal -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+      <div style="font-size: 2rem;">✅</div>
+      <h3>Thanks for leaving a recommendation!</h3>
+      <button onclick="closePopup()">Ok</button>
+    </div>
+  </div>
+
+  <script>
+    // Scroll to Top Function
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      scrollBtn.style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Modal Logic
+    function handleRecommendation(e) {
+      e.preventDefault();
+      const text = document.getElementById("recommendationInput").value.trim();
+      if (!text) return;
+      document.getElementById("recommendationInput").value = "";
+      document.getElementById("nameInput").value = "";
+      document.getElementById("popupOverlay").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>
+
